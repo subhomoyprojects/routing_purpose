@@ -1,0 +1,32 @@
+routing --- it is a concept through which we can pass from one link to 
+another link in our application. Each link is connected with a component 
+which is loaded when the link is active.
+It is a process by which we can transmit to a perticular link path 
+based on the routing rule.
+
+
+React ----> routing ---> we need a third party module for routing in react.
+
+module name :    'react-router-dom'
+
+E:\React_Work\firstapp>npm install react-router-dom@5.2.0
+
+Go to package.json ----> chcek
+
+Link   ---- to generate the link we need this 2 components.
+NavLink
+
+import {Link,NavLink} from 'react-router-dom';
+
+<Link to='/path'>Home</Link>
+
+BrowserRouter --- they are used to define the routing rules for the routing.----we write routing
+rules in App.js.
+Route
+Switch --- It is used only for nested routing 
+
+import {BrowserRouter,Route} from 'react-router-dom';
+
+<BrowserRouter>
+<Route path='/path' component={Comp_name}/>
+</BrowserRouter>
