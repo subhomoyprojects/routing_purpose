@@ -1,6 +1,30 @@
 import React from "react";
 
 export default class Passobj extends React.Component{
+    state = {
+        tempid: null,
+        tempname: '',
+        temploc: '',
+        tempdept: '',
+        tempemail: ''
+    }
+
+    componentWillMount(){
+        // this call props validation when you page refresh the data will vanish that's why it use for
+        if(!this.props.location.info){
+            alert('Sorry no props recieve')
+        }
+        else{
+            this.setState({
+                tempid: this.props.location.info.empid,
+                tempname: this.props.location.info.empname,
+                temploc: this.props.location.info.loc,
+                tempdept: this.props.location.info.dept,
+                tempemail: this.props.location.info.email
+            });
+        }
+    }
+
     render(){
         return(
             <>
@@ -16,11 +40,11 @@ export default class Passobj extends React.Component{
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{this.props.location.info.empid}</td>
-                            <td>{this.props.location.info.empname}</td>
-                            <td>{this.props.location.info.loc}</td>
-                            <td>{this.props.location.info.dept}</td>
-                            <td>{this.props.location.info.email}</td>
+                            <td>{this.state.tempid}</td>
+                            <td>{this.state.tempname}</td>
+                            <td>{this.state.temploc}</td>
+                            <td>{this.state.tempdept}</td>
+                            <td>{this.state.tempemail}</td>
 
                         </tr>
                     </tbody>
